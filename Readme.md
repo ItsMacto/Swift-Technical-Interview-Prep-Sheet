@@ -19,4 +19,4 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Contact
 
-For any questions or suggestions, feel free to reach out via [GitHub Issues](https://github.com/your-repo/issues).
+For any questions or suggestions, feel free to reach out via [GitHub Issues](https://github.com/ItsMacto/Swift-Technical-Interview-Prep-Sheet/issues).
