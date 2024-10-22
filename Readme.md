@@ -3,7 +3,7 @@
 
 Preparing for a technical interview in Swift requires a solid understanding of data structures, algorithms, and the language's unique features. This guide provides an overview of essential data structures and algorithms, complete with Swift code snippets and explanations to help you master the concepts needed to excel in your interviews.
 
-## Table of Contents
+## Data Structures 
 
 1. [Arrays in Swift](#arrays-in-swift)
     - [Creating Arrays](#creating-arrays)
