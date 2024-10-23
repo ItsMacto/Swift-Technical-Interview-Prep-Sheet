@@ -133,6 +133,218 @@ func buildPrefixSum(_ arr: [Int]) -> [Int] {
 }
 ```
 
+---
+
+## Efficient String Building
+This pattern efficiently builds a string from an array of characters.
+
+```swift
+func buildString(from arr: [Character]) -> String {
+    return String(arr)
+}
+```
+
+Another common pattern for editing a string is to convert it to an array of characters, make the necessary changes, and then convert it back to a string. Swift is sometimes hard to edit strings directly because characters can be diferent sizes so you cant directly index into them. This allows you to edit strings as you would in other lauanges using index nodation.
+
+```swift
+func editString(_ str: String) -> String {
+    var arr = Array(str)
+    // Make changes to arr
+    return String(arr)
+}
+```
+
+---
+
+## Linked List: Fast and Slow Pointer
+
+This pattern uses two pointers to traverse the linked list at different speeds.
+
+```swift
+class ListNode {
+    var val: Int
+    var next: ListNode?
+    init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+}
+
+func fastAndSlowPointer(_ head: ListNode?) -> Int {
+    var slow = head
+    var fast = head
+    var ans = 0
+
+    while fast != nil && fast?.next != nil {
+        // do logic
+        slow = slow?.next
+        fast = fast?.next?.next
+    }
+
+    return ans
+}
+```
+
+--- 
+## Reversing a Linked List
+
+This pattern reverses a linked list.
+
+```swift
+func reverseLinkedList(_ head: ListNode?) -> ListNode? {
+    var curr = head
+    var prev: ListNode? = nil
+    while curr != nil {
+        let nextNode = curr?.next
+        curr?.next = prev
+        prev = curr
+        curr = nextNode
+    }
+
+    return prev
+}
+```
+
+---
+
+## Find Number of Subarrays that Fit an Exact Criteria
+This pattern finds the number of subarrays that fit an exact criteria using a hash map.
+
+```swift
+func findSubarrays(_ arr: [Int], _ k: Int) -> Int {
+    var counts = [Int: Int]()
+    counts[0] = 1
+    var ans = 0
+    var curr = 0
+
+    for num in arr {
+        // do logic to change curr
+        ans += counts[curr - k, default: 0]
+        counts[curr, default: 0] += 1
+    }
+
+    return ans
+}
+```
+
+---
+
+## Monotonic Increasing Stack
+This pattern maintains a monotonic increasing stack. A monotonic stack is a stack that either only increases or only decreases.
+
+```swift
+func monotonicIncreasingStack(_ arr: [Int]) -> Int {
+    var stack = [Int]()
+    var ans = 0
+
+    for num in arr {
+        // for monotonic decreasing, just flip the > to <
+        while !stack.isEmpty && stack.last! > num {
+            // do logic
+            stack.removeLast()
+        }
+
+        stack.append(num)
+    }
+
+    return ans
+}
+```
+> **Note:** The same logic can be applied to maintain a monotonic queue.
+
+---
+
+## Binary Tree: DFS (Recursive)
+
+This pattern performs a depth-first search on a binary tree using recursion.
+
+```swift
+class TreeNode {
+    var val: Int
+    var left: TreeNode?
+    var right: TreeNode?
+    init(_ val: Int) {
+        self.val = val
+        self.left = nil
+        self.right = nil
+    }
+}
+
+func dfsRecursive(_ root: TreeNode?) -> Int {
+    guard let root = root else {
+        return 0
+    }
+
+    var ans = 0
+    // do logic
+    _ = dfsRecursive(root.left)
+    _ = dfsRecursive(root.right)
+    return ans
+}
+```
+
+## Binary Tree: DFS (Iterative)
+This pattern performs a depth-first search on a binary tree using an iterative approach with a stack.
+```swift
+func dfsIterative(_ root: TreeNode?) -> Int {
+    guard let root = root else {
+        return 0
+    }
+
+    var stack = [TreeNode]()
+    stack.append(root)
+    var ans = 0
+
+    while !stack.isEmpty {
+        let node = stack.removeLast()
+        // do logic
+        if let left = node.left {
+            stack.append(left)
+        }
+        if let right = node.right {
+            stack.append(right)
+        }
+    }
+
+    return ans
+}
+```
+
+## Binary Tree: BFS
+This pattern performs a breadth-first search on a binary tree using a queue.
+```swift
+func bfs(_ root: TreeNode?) -> Int {
+    guard let root = root else {
+        return 0
+    }
+
+    var queue = [TreeNode]()
+    queue.append(root)
+    var ans = 0
+
+    while !queue.isEmpty {
+        let currentLength = queue.count
+        // do logic for current level
+
+        for _ in 0..<currentLength {
+            let node = queue.removeFirst()
+            // do logic
+            if let left = node.left {
+                queue.append(left)
+            }
+            if let right = node.right {
+                queue.append(right)
+            }
+        }
+    }
+
+    return ans
+}
+``` 
+
+---
+
+
 
 ---
 
