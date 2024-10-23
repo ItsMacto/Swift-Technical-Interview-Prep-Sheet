@@ -8,9 +8,6 @@ Preparing for a technical interview in Swift requires a solid understanding of d
 
 - [Data Structures](DataStructures.md)
 - [Algorithm Templates](AlgorithmTemplates.md)
-- [License](LICENSE)
-- [Contributing](#contributing)
-- [Contact](#contact)
 
 ---
 
