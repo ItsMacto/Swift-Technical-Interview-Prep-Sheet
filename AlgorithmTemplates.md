@@ -350,9 +350,5 @@ func bfs(_ root: TreeNode?) -> Int {
 
 ## Notes
 
-- **PLACEHOLDERS:** Replace `/* CONDITION */` and `/* WINDOW_CONDITION_BROKEN */` with actual conditions based on your specific problem.
 - **ARRAY MUTABILITY:** If you need to modify the input arrays within the functions, consider using `var` instead of `let` for parameters or make copies inside the function.
 - **EDGE CASES:** Always consider edge cases, such as empty arrays, when implementing these patterns in real-world scenarios.
-
-Feel free to customize these templates further based on your specific requirements!
-
